@@ -1,0 +1,299 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main_Layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    tools:context=".activity.MainActivity" >
+
+    <RelativeLayout
+        android:layout_weight="0.5"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+
+        <TextView
+            android:id="@+id/cityName_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="16dp"
+            android:text="广州"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            tools:ignore="HardcodedText"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="16dp" />
+
+        <TextView
+            android:id="@+id/date_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_toEndOf="@id/cityName_text"
+            android:layout_toRightOf="@id/cityName_text" />
+
+        <TextView
+            android:id="@+id/time_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/date_text"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_toEndOf="@id/cityName_text"
+            android:layout_toRightOf="@id/cityName_text" />
+
+        <ImageButton
+            android:id="@+id/menuButton"
+            android:layout_width="40dp"
+            android:layout_height="30dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="10dp"
+            android:contentDescription="@string/empty"
+            android:src="@drawable/menu_button"
+            android:layout_marginRight="10dp"
+            android:layout_alignParentRight="true" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.8dp"
+        android:layout_marginBottom="10dp"
+        android:background="#55CBCBCB" />
+    <LinearLayout
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:baselineAligned="false">
+        <RelativeLayout
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/weather_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@string/weather"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginLeft="16dp" />
+
+            <ImageView
+                android:id="@+id/weather_Img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/weather_text"
+                android:contentDescription="@string/empty"
+                android:src="@drawable/icon_100"
+                android:layout_alignStart="@+id/weather_text"
+                android:layout_alignLeft="@+id/weather_text"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp" />
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="0.8dp"
+            android:layout_height="match_parent"
+            android:background="#66CBCBCB" />
+
+        <RelativeLayout
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/temp_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginStart="20dp"
+                android:text="@string/temp"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <com.wzq.weatherapp.view.TempView
+                android:id="@+id/temp_View"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/temp_text"
+                android:layout_alignStart="@id/temp_text"
+                android:layout_alignLeft="@id/temp_text"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"/>
+
+        </RelativeLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.8dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:background="#55CBCBCB" />
+
+    <LinearLayout
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:baselineAligned="false">
+        <RelativeLayout
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/humidity_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@string/humidity"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginLeft="16dp" />
+
+            <com.wzq.weatherapp.view.HumidityView
+                android:id="@+id/humidity_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/humidity_text"
+                android:layout_alignStart="@+id/humidity_text"
+                android:layout_alignLeft="@+id/humidity_text"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="10dp" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="0.8dp"
+            android:layout_height="match_parent"
+            android:background="#66CBCBCB" />
+
+        <RelativeLayout
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/pm25_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginStart="20dp"
+                android:text="@string/pm2.5"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <com.wzq.weatherapp.view.DrawNumView
+                android:id="@+id/pm25_Show"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@id/pm25_text"
+                android:layout_alignLeft="@id/pm25_text"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_below="@id/pm25_text"
+                />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.8dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:background="#55CBCBCB" />
+
+    <LinearLayout
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:baselineAligned="false">
+        <RelativeLayout
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/minmaxTemp_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@string/minmaxTemp"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginLeft="16dp" />
+
+            <com.wzq.weatherapp.view.MaxMinTempView
+                android:id="@+id/minmaxTemp_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/minmaxTemp_text"
+                android:layout_alignStart="@+id/minmaxTemp_text"
+                android:layout_alignLeft="@+id/minmaxTemp_text"
+                android:layout_alignEnd="@id/minmaxTemp_text"
+                android:layout_alignRight="@id/minmaxTemp_text" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="0.8dp"
+            android:layout_height="match_parent"
+            android:background="#66CBCBCB" />
+
+        <RelativeLayout
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+
+
+            <TextView
+                android:id="@+id/wind_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginStart="20dp"
+                android:text="@string/wind"
+                android:clickable="false"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/wind_fenche"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/fengche"
+                android:layout_below="@id/wind_text"
+                android:contentDescription="@string/empty"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="28dp"
+                android:layout_marginLeft="28dp" />
+
+            <com.wzq.weatherapp.view.WindView
+                android:id="@+id/fenche_line_view"
+                android:layout_width="2dp"
+                android:layout_height="80dp"
+                android:layout_marginTop="62dp"
+                android:layout_marginStart="57dp"
+                android:layout_marginLeft="57dp" />
+
+            <TextView
+                android:id="@+id/wind_value_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/fenche_line_view"
+                android:layout_toEndOf="@+id/wind_fenche"
+                android:textSize="18sp"
+                android:layout_toRightOf="@+id/wind_fenche" />
+
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>
