@@ -101,12 +101,14 @@ public class WelcomeActivity extends AppCompatActivity {
 	}
 
 	private void requestWeather(String city) {
-//		String[] s = city.split("市");
-//		city = s[0];
+		String[] s = city.split("市");
+		city = s[0];
 
 		Parameters para = new Parameters();
 
-		para.put("city", "guangzhou");
+		//TODO 模拟器定位问题
+//		para.put("city", "guangzhou");
+		para.put("city", city);
 		ApiStoreSDK.execute("http://apis.baidu.com/heweather/weather/free",
 				ApiStoreSDK.GET,
 				para,

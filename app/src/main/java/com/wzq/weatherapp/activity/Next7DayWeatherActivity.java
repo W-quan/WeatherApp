@@ -116,20 +116,20 @@ public class Next7DayWeatherActivity extends Activity implements View.OnTouchLis
     }
 
     private String day[] = {"周日", "周一", "周二", "周三", "周四", "周五", "周六"};
-    private int a = 0;
+    private int today = 0;  //保存今天是周几的变量
 
     private void toDay() {
         Calendar cal = Calendar.getInstance();
         cal.setTime(new Date());
-        a = cal.get(Calendar.DAY_OF_WEEK);
+        today = cal.get(Calendar.DAY_OF_WEEK);
     }
 
     private void setDay(int i, int j) {
-        tempText[i][j].setText(day[a - 1]);
-        if (a > 6) {
-            a = 0;
+        if (today > 6) {
+            today = 0;
         }
-        a++;
+        tempText[i][j].setText(day[today]);
+        today++;
     }
 
     private void setMinTemp(int i, int j) {
